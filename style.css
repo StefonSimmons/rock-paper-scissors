@@ -58,10 +58,14 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: 50% 60%;
   flex-wrap: wrap;
-  width: 550px;
-  height: 350px;
-  display: none /*uncomment for js stuff*/
+  width: 450px;
+  height: 450px;
+  /* display: none uncomment for js stuff */
 }
 
 .choice{
@@ -71,15 +75,17 @@ header{
   border-radius: 90%;
   width: 175px;
   height: 175px;
-  margin: 40px;
+  /* margin: 40px; */
   cursor: pointer;
 }
 
 .paper-choice-color{
-  background-image: radial-gradient(circle at top, hsl(230, 89%, 62%), hsl(230, 89%, 65%))
+  background-image: radial-gradient(circle at top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  margin-right: 50px
 }
 .scissors-choice-color{
-  background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%))
+  background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  margin-left: 50px
 }
 .rock-choice-color{
   background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
