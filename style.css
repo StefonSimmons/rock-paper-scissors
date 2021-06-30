@@ -24,7 +24,7 @@ header{
   width: 800px;
   height: 125px;
   box-sizing: border-box;
-  padding: 25px;
+  padding: 20px;
 }
 
 .title > h1{
@@ -34,7 +34,7 @@ header{
 .scoreboard{
   background-color: white;
   width: 115px;
-  height: 75px;
+  height: 90px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -59,9 +59,9 @@ header{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 450px;
+  width: 550px;
   height: 350px;
-  /* margin-top: 60px */
+  display: none /*uncomment for js stuff*/
 }
 
 .choice{
@@ -69,9 +69,10 @@ header{
   justify-content: center;
   align-items: center;
   border-radius: 90%;
-  width: 150px;
-  height: 150px;
-  margin: 30px
+  width: 175px;
+  height: 175px;
+  margin: 40px;
+  cursor: pointer;
 }
 
 .paper-choice-color{
@@ -109,5 +110,25 @@ header{
   letter-spacing: 2px;
   color: white;
   font-weight: 700;
+}
 
+/* CHOSEN SECTION */
+
+.chosen-section{
+  display: flex;
+  justify-content: space-between;
+  border: green solid 2px;
+  width: 800px;
+  display: none;
+}
+.chosen-section > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chosen-title{
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
