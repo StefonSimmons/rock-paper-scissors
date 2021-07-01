@@ -16,7 +16,7 @@ const closeModal = document.querySelector(".close-modal")
 // HELPER TEMPLATE FOR CHOICE BUTTONS
 const selectionTemplate = (choice) => {
   const selection = `
-  <button class="${choice}-choice-color chosen">
+  <button class="${choice}-choice-color chosen" value=${choice}>
     <div class="inner-choice${choice === "loading" ? "-loading" : ''}">
       ${choice === "loading"
       ? ''
