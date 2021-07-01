@@ -65,7 +65,7 @@ header{
   flex-wrap: wrap;
   width: 450px;
   height: 450px;
-  /* display: none uncomment for js stuff */
+  display: none /*uncomment for js stuff*/
 }
 
 .choice,.chosen{
@@ -121,7 +121,7 @@ header{
 /* CHOSEN SECTION */
 
 .chosen-section{
-  display: none;
+  display: flex;
   justify-content: space-between;
   width: 550px;
 }
@@ -156,4 +156,16 @@ header{
 .chosen{
   width: 225px;
   height: 225px;
+}
+
+.play-again-btn{
+  width: 125px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: white;
+  border: white solid 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: hsl(229, 25%, 31%);
+  font-weight: 700;
 }
