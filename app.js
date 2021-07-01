@@ -4,6 +4,8 @@ const chosenSection = document.querySelector(".chosen-section")
 const myChosenContent = document.querySelector(".my-chosen-content")
 const houseContent = document.querySelector(".house-chosen-content")
 const score = document.querySelector(".score")
+const playAgainMsg = document.querySelector(".play-again-msg")
+const playAgainBtn = document.querySelector(".play-again-btn")
 
 const selectionTemplate = (choice) => {
   const selection = `
@@ -32,16 +34,24 @@ const checkPicks = (picks) => {
   const [myChoice, houseChoice] = picks
   if (myChoice === "paper" && houseChoice === "rock") {
     score.textContent = parseInt(score.textContent) + 1
+    playAgainMsg.textContent = "You Win"
   } else if (myChoice === "rock" && houseChoice === "paper") {
     score.textContent = parseInt(score.textContent) - 1
+    playAgainMsg.textContent = "You Lose"
   } else if (myChoice === "scissors" && houseChoice === "paper") {
     score.textContent = parseInt(score.textContent) + 1
+    playAgainMsg.textContent = "You Win"
   } else if (myChoice === "paper" && houseChoice === "scissors") {
     score.textContent = parseInt(score.textContent) - 1
+    playAgainMsg.textContent = "You Lose"
   } else if (myChoice === "rock" && houseChoice === "scissors") {
     score.textContent = parseInt(score.textContent) + 1
+    playAgainMsg.textContent = "You Win"
   } else if (myChoice === "scissors" && houseChoice === "rock") {
     score.textContent = parseInt(score.textContent) - 1
+    playAgainMsg.textContent = "You Lose"
+  } else {
+    playAgainMsg.textContent = "Tie!"
   }
 }
 
@@ -52,5 +62,12 @@ choices.forEach(choice => {
     const selections = appendChoices(choice)
     checkPicks(selections)
   })
+})
+
+playAgainBtn.addEventListener('click', () => {
+  choicesSection.style.display = 'flex'
+  chosenSection.style.display = 'none'
+  const picks = document.querySelectorAll('.chosen')
+  picks.forEach( pick => pick.remove())
 })
 

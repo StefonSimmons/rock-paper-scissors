@@ -27,9 +27,10 @@ header{
   padding: 20px;
 }
 
-.title > h1{
+.title-container > h1{
   margin: 0;
   line-height: .8;
+  font-size: 32px;
 }
 .scoreboard{
   background-color: white;
@@ -65,7 +66,7 @@ header{
   flex-wrap: wrap;
   width: 450px;
   height: 450px;
-  display: none /*uncomment for js stuff*/
+  /* display: none uncomment for js stuff */
 }
 
 .choice,.chosen{
@@ -121,9 +122,9 @@ header{
 /* CHOSEN SECTION */
 
 .chosen-section{
-  display: flex;
+  display: none;
   justify-content: space-between;
-  width: 550px;
+  width: 700px;
 }
 .chosen-section > div{
   display: flex;
@@ -168,4 +169,11 @@ header{
   letter-spacing: 2px;
   color: hsl(229, 25%, 31%);
   font-weight: 700;
+  cursor: pointer;
+}
+
+.play-again-msg{
+  font-size: 32px;
+  text-transform: uppercase;
+  color: white;
 }
