@@ -6,7 +6,7 @@ const houseContent = document.querySelector(".house-chosen-content")
 
 const selectionTemplate = (choice) => {
   const selection = `
-  <div class="${choice}-choice-color choice">
+  <div class="${choice}-choice-color chosen">
     <div class="inner">
       <img
         src="./images/icon-${choice}.svg"
