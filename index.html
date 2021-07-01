@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -12,6 +10,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="./app.js"></script>
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
@@ -26,54 +25,51 @@
         <p class="score">0</p>
       </div>
     </header>
+
     <!-- step 1 -->
     <section class="choices-section">
-      <div class="paper-choice-color choice">
+      <button class="paper-choice-color choice" value="paper">
         <div class="inner">
-          <img src="./images/icon-paper.svg" alt="paper" class="paper-btn" />
+          <img src="./images/icon-paper.svg" alt="paper" />
         </div>
-      </div>
-      <div class="scissors-choice-color choice">
+      </button>
+      <button class="scissors-choice-color choice" value="scissors">
         <div class="inner">
-          <img
-            src="./images/icon-scissors.svg"
-            alt="scissors"
-            class="scissors-btn"
-          />
+          <img src="./images/icon-scissors.svg" alt="scissors" />
         </div>
-      </div>
-      <div class="rock-choice-color choice">
+      </button>
+      <button class="rock-choice-color choice" value="rock">
         <div class="inner">
-          <img src="./images/icon-rock.svg" alt="rock" class="rock-btn" />
+          <img src="./images/icon-rock.svg" alt="rock" />
         </div>
-      </div>
+      </button>
     </section>
 
     <!-- step 2 -->
     <section class="chosen-section">
-      <div>
+      <div class="my-chosen-content">
         <h2 class="chosen-title">You Picked</h2>
-        <div class="scissors-choice-color choice">
+        <!-- <div class="rock-choice-color choice">
           <div class="inner">
             <img
-              src="./images/icon-scissors.svg"
-              alt="scissors"
-              class="scissors-btn"
+              src="./images/icon-rock.svg"
+              alt="rock"
+              class="rock-btn"
             />
           </div>
-        </div>
+        </div> -->
       </div>
-      <div>
+      <div class="house-chosen-content">
         <h2 class="chosen-title">The House Picked</h2>
-        <div class="scissors-choice-color choice">
+        <!-- <div class="rock-choice-color choice">
           <div class="inner">
             <img
-              src="./images/icon-scissors.svg"
-              alt="scissors"
-              class="scissors-btn"
+              src="./images/icon-rock.svg"
+              alt="rock"
+              class="rock-btn"
             />
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <section class="rule-section">
