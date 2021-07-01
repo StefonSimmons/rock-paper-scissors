@@ -2,7 +2,7 @@ const choices = document.querySelectorAll('.choice')
 const choicesSection = document.querySelector(".choices-section")
 const chosenSection = document.querySelector(".chosen-section")
 const myChosenContent = document.querySelector(".my-chosen-content")
-const houseContent = document.querySelector(".house-chosen-content")
+const houseChosenContent = document.querySelector(".house-chosen-content")
 const score = document.querySelector(".score")
 const playAgainContent = document.querySelector('.play-again-content')
 const playAgainMsg = document.querySelector(".play-again-msg")
@@ -12,9 +12,11 @@ const modalBG = document.querySelector(".dark-bg-modal")
 const ruleModal = document.querySelector(".rule-modal")
 const closeModal = document.querySelector(".close-modal")
 
+
+// HELPER TEMPLATE FOR CHOICE BUTTONS
 const selectionTemplate = (choice) => {
   const selection = `
-  <div class="${choice}-choice-color chosen">
+  <button class="${choice}-choice-color chosen">
     <div class="inner-choice${choice === "loading" ? "-loading" : ''}">
       ${choice === "loading"
       ? ''
@@ -27,28 +29,31 @@ const selectionTemplate = (choice) => {
       `
     }
     </div>
-  </div>
+  </button>
 `
   return selection
 }
 
-const appendChoices = (choiceNode) => {
-  const myChoice = choiceNode.value
+
+// ADD PICKS TO DOM
+const appendChoices = (choice) => {
+  const myChoice = choice.value
   const houseChoice = choices[Math.floor(Math.random() * choices.length)].value
 
   myChosenContent.insertAdjacentHTML('beforeend', selectionTemplate(myChoice));
-  houseContent.insertAdjacentHTML('beforeend', selectionTemplate('loading'));
+  houseChosenContent.insertAdjacentHTML('beforeend', selectionTemplate('loading'));
 
-  // pause for dramatic effect
-  setTimeout(() => {
+  setTimeout(() => { // pausing for dramatic effect
     document.querySelector('.loading-choice-color').remove()
-    houseContent.insertAdjacentHTML('beforeend', selectionTemplate(houseChoice));
+    houseChosenContent.insertAdjacentHTML('beforeend', selectionTemplate(houseChoice));
   }, 3000)
 
   return [myChoice, houseChoice]
 }
 
-const checkPicks = (picks) => {
+
+// CHOOSE WINNER & CHANGE SCOREBOARD
+const scorePicks = (picks) => {
   const [myChoice, houseChoice] = picks
   if (myChoice === "paper" && houseChoice === "rock") {
     score.textContent = parseInt(score.textContent) + 1
@@ -73,19 +78,25 @@ const checkPicks = (picks) => {
   }
 }
 
+
+
+// EVENT LISTENER FOR EACH CHOICE
 choices.forEach(choice => {
   choice.addEventListener('click', () => {
     choicesSection.style.display = 'none'
     chosenSection.style.display = 'flex'
 
     const selections = appendChoices(choice)
-    setTimeout(() => {
+
+    setTimeout(() => { // pause for dramatic effect
       playAgainContent.style.display = "flex"
-      checkPicks(selections)
+      scorePicks(selections)
     }, 3000)
   })
 })
 
+
+// OTHER EVENT LISTENERS
 playAgainBtn.addEventListener('click', () => {
   choicesSection.style.display = 'flex'
   chosenSection.style.display = 'none'
