@@ -117,6 +117,7 @@ header{
   letter-spacing: 2px;
   color: white;
   font-weight: 700;
+  cursor: pointer;
 }
 
 /* CHOSEN SECTION */
@@ -176,4 +177,39 @@ header{
   font-size: 32px;
   text-transform: uppercase;
   color: white;
+}
+
+/* modal */
+
+.rule-modal{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 25%;
+  background-color: white;
+  border-radius: 8px;
+  width: 375px;
+  height: 400px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+.rule-modal > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.title-modal{
+  color: hsl(229, 25%, 31%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin: 0
+}
+.close-modal{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }

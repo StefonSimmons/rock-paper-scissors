@@ -6,6 +6,9 @@ const houseContent = document.querySelector(".house-chosen-content")
 const score = document.querySelector(".score")
 const playAgainMsg = document.querySelector(".play-again-msg")
 const playAgainBtn = document.querySelector(".play-again-btn")
+const ruleModalBtn = document.querySelector(".rule-modal-btn")
+const ruleModal = document.querySelector(".rule-modal")
+const closeModal = document.querySelector(".close-modal")
 
 const selectionTemplate = (choice) => {
   const selection = `
@@ -69,5 +72,13 @@ playAgainBtn.addEventListener('click', () => {
   chosenSection.style.display = 'none'
   const picks = document.querySelectorAll('.chosen')
   picks.forEach( pick => pick.remove())
+})
+
+ruleModalBtn.addEventListener('click', () => {
+  ruleModal.style.display = "flex"
+})
+
+closeModal.addEventListener('click', () => {
+  ruleModal.style.display = "none"
 })
 
