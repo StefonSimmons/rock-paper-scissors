@@ -7,6 +7,7 @@ const score = document.querySelector(".score")
 const playAgainMsg = document.querySelector(".play-again-msg")
 const playAgainBtn = document.querySelector(".play-again-btn")
 const ruleModalBtn = document.querySelector(".rule-modal-btn")
+const modalBG = document.querySelector(".dark-bg-modal")
 const ruleModal = document.querySelector(".rule-modal")
 const closeModal = document.querySelector(".close-modal")
 
@@ -75,10 +76,12 @@ playAgainBtn.addEventListener('click', () => {
 })
 
 ruleModalBtn.addEventListener('click', () => {
+  modalBG.style.display = "flex"
   ruleModal.style.display = "flex"
 })
 
 closeModal.addEventListener('click', () => {
+  modalBG.style.display = "none"
   ruleModal.style.display = "none"
 })
 
