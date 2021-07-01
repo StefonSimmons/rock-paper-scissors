@@ -4,6 +4,7 @@ const chosenSection = document.querySelector(".chosen-section")
 const myChosenContent = document.querySelector(".my-chosen-content")
 const houseContent = document.querySelector(".house-chosen-content")
 const score = document.querySelector(".score")
+const playAgainContent = document.querySelector('.play-again-content')
 const playAgainMsg = document.querySelector(".play-again-msg")
 const playAgainBtn = document.querySelector(".play-again-btn")
 const ruleModalBtn = document.querySelector(".rule-modal-btn")
@@ -14,11 +15,17 @@ const closeModal = document.querySelector(".close-modal")
 const selectionTemplate = (choice) => {
   const selection = `
   <div class="${choice}-choice-color chosen">
-    <div class="inner-choice">
-      <img
+    <div class="inner-choice${choice === "loading" ? "-loading" : ''}">
+      ${choice === "loading"
+      ? ''
+      :
+      `
+        <img
         src="./images/icon-${choice}.svg"
         alt="${choice}"
-      />
+        />
+      `
+    }
     </div>
   </div>
 `
@@ -28,9 +35,16 @@ const selectionTemplate = (choice) => {
 const appendChoices = (choiceNode) => {
   const myChoice = choiceNode.value
   const houseChoice = choices[Math.floor(Math.random() * choices.length)].value
-  
+
   myChosenContent.insertAdjacentHTML('beforeend', selectionTemplate(myChoice));
-  houseContent.insertAdjacentHTML('beforeend', selectionTemplate(houseChoice));
+  houseContent.insertAdjacentHTML('beforeend', selectionTemplate('loading'));
+
+  // pause for dramatic effect
+  setTimeout(() => {
+    document.querySelector('.loading-choice-color').remove()
+    houseContent.insertAdjacentHTML('beforeend', selectionTemplate(houseChoice));
+  }, 3000)
+
   return [myChoice, houseChoice]
 }
 
@@ -63,8 +77,12 @@ choices.forEach(choice => {
   choice.addEventListener('click', () => {
     choicesSection.style.display = 'none'
     chosenSection.style.display = 'flex'
+
     const selections = appendChoices(choice)
-    checkPicks(selections)
+    setTimeout(() => {
+      playAgainContent.style.display = "flex"
+      checkPicks(selections)
+    }, 3000)
   })
 })
 
@@ -72,7 +90,8 @@ playAgainBtn.addEventListener('click', () => {
   choicesSection.style.display = 'flex'
   chosenSection.style.display = 'none'
   const picks = document.querySelectorAll('.chosen')
-  picks.forEach( pick => pick.remove())
+  picks.forEach(pick => pick.remove())
+  playAgainContent.style.display = "none"
 })
 
 ruleModalBtn.addEventListener('click', () => {
