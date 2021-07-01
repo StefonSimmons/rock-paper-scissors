@@ -13,7 +13,7 @@ const closeModal = document.querySelector(".close-modal")
 const selectionTemplate = (choice) => {
   const selection = `
   <div class="${choice}-choice-color chosen">
-    <div class="inner">
+    <div class="inner-choice">
       <img
         src="./images/icon-${choice}.svg"
         alt="${choice}"
