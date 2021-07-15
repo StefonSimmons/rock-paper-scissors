@@ -265,3 +265,39 @@ header{
   height: 20px;
   cursor: pointer;
 }
+
+
+/* MEDIA QUERIES */
+
+@media(max-width: 815px){
+  header{
+    width: 360px;
+    padding: 25px;
+    border-radius: 10px;
+  }
+  .title-container > h1{
+    font-size: 24px;
+  }
+  .scoreboard{
+    width: 105px
+  }
+  .choices-section{
+    width: 360px;
+    height: 360px;
+    background-size: 245px;
+    background-position: 50% 60%;
+  }
+  .choice{
+    width: 145px;
+    height: 145px
+  }
+  .paper-choice-color{
+    margin-right: 30px
+  }
+  .scissors-choice-color{
+    margin-left: 30px
+  }
+  .rule-section{
+    text-align: center;
+  }
+}
