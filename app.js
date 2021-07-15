@@ -8,9 +8,11 @@ const playAgainContent = document.querySelector('.play-again-content')
 const playAgainMsg = document.querySelector(".play-again-msg")
 const playAgainBtn = document.querySelector(".play-again-btn")
 const ruleModalBtn = document.querySelector(".rule-modal-btn")
+const devModalBtn = document.querySelector(".developer-modal-btn")
 const modalBG = document.querySelector(".dark-bg-modal")
 const ruleModal = document.querySelector(".rule-modal")
-const closeModal = document.querySelector(".close-modal")
+const devModal = document.querySelector(".developer-modal")
+const closeModals = document.querySelectorAll(".close-modal")
 
 
 // HELPER TEMPLATE FOR CHOICE BUTTONS
@@ -110,8 +112,16 @@ ruleModalBtn.addEventListener('click', () => {
   ruleModal.style.display = "flex"
 })
 
-closeModal.addEventListener('click', () => {
-  modalBG.style.display = "none"
-  ruleModal.style.display = "none"
+devModalBtn.addEventListener('click', () => {
+  modalBG.style.display = "flex"
+  devModal.style.display = "flex"
+})
+
+closeModals.forEach(closeModal => {
+  closeModal.addEventListener('click', () => {
+    modalBG.style.display = "none"
+    ruleModal.style.display = "none"
+    devModal.style.display = "none"
+  })
 })
 
