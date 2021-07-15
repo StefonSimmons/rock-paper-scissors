@@ -271,6 +271,7 @@ header{
 /* MEDIA QUERIES */
 
 @media(max-width: 815px){
+  /* HEADER MEDIA QUERIES*/
   header{
     width: 360px;
     padding: 25px;
@@ -282,6 +283,7 @@ header{
   .scoreboard{
     width: 105px
   }
+
   /* CHOICES SECTION MEDIA QUERIES */
   .choices-section{
     width: 360px;
@@ -344,5 +346,14 @@ header{
     font-size: 36px;
     letter-spacing: 9px;
     margin: 0 0 15px 0
+  }
+  /* RULE MODAL MEDIA QUERY */
+  .rule-modal{
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .rule-modal > img{
+    margin: auto 0; 
   }
 }
