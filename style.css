@@ -170,7 +170,8 @@ header{
 }
 
 .play-again-content{
-  display: none;
+  display: flex;
+  visibility: hidden;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -281,6 +282,7 @@ header{
   .scoreboard{
     width: 105px
   }
+  /* CHOICES SECTION MEDIA QUERIES */
   .choices-section{
     width: 360px;
     height: 360px;
@@ -299,5 +301,48 @@ header{
   }
   .rule-section{
     text-align: center;
+  }
+
+  /* CHOSEN SECTION MEDIA QUERIES */
+  .chosen-section{
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 360px;
+    height: 360px
+  }
+  .play-again-content{
+    order: 1;
+    display: flex;
+    visibility: hidden;
+  }
+  .my-chosen-content{
+    width: 140px;
+    flex-direction: column-reverse;
+    margin-right: 30px;
+  }
+  .house-chosen-content{
+    width: 140px;
+    flex-direction: column-reverse;
+    margin-left: 30px;
+  }
+  .chosen-title{
+    font-size: 12px;
+    text-align: center;
+  }
+  .chosen{
+    width: 125px;
+    height: 125px
+  }
+  .play-again-btn{
+    width: 215px;
+    height: 60px;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .play-again-msg{
+    font-size: 36px;
+    letter-spacing: 9px;
+    margin: 0 0 15px 0
   }
 }

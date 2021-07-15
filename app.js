@@ -89,7 +89,7 @@ choices.forEach(choice => {
     const selections = appendChoices(choice)
 
     setTimeout(() => { // pause for dramatic effect
-      playAgainContent.style.display = "flex"
+      playAgainContent.style.visibility = "visible"
       scorePicks(selections)
     }, 3000)
   })
@@ -102,7 +102,7 @@ playAgainBtn.addEventListener('click', () => {
   chosenSection.style.display = 'none'
   const picks = document.querySelectorAll('.chosen')
   picks.forEach(pick => pick.remove())
-  playAgainContent.style.display = "none"
+  playAgainContent.style.visibility = "hidden"
 })
 
 ruleModalBtn.addEventListener('click', () => {
