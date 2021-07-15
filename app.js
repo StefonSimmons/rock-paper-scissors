@@ -53,28 +53,34 @@ const appendChoices = (choice) => {
   return [myChoice, houseChoice]
 }
 
+// pick helper
+const playerWon = () => {
+  score.textContent = parseInt(score.textContent) + 1
+  playAgainMsg.textContent = "You Win"
+  myChosenContent.children[1].classList.add('winner')
+}
+// pick helper
+const houseWon = () => {
+  score.textContent = parseInt(score.textContent) - 1
+  playAgainMsg.textContent = "You Lose"
+  myChosenContent.children[1].classList.add('not-winner')
+}
 
 // CHOOSE WINNER & CHANGE SCOREBOARD
 const scorePicks = (picks) => {
   const [myChoice, houseChoice] = picks
   if (myChoice === "paper" && houseChoice === "rock") {
-    score.textContent = parseInt(score.textContent) + 1
-    playAgainMsg.textContent = "You Win"
+    playerWon()
   } else if (myChoice === "rock" && houseChoice === "paper") {
-    score.textContent = parseInt(score.textContent) - 1
-    playAgainMsg.textContent = "You Lose"
+    houseWon()
   } else if (myChoice === "scissors" && houseChoice === "paper") {
-    score.textContent = parseInt(score.textContent) + 1
-    playAgainMsg.textContent = "You Win"
+    playerWon()
   } else if (myChoice === "paper" && houseChoice === "scissors") {
-    score.textContent = parseInt(score.textContent) - 1
-    playAgainMsg.textContent = "You Lose"
+    houseWon()
   } else if (myChoice === "rock" && houseChoice === "scissors") {
-    score.textContent = parseInt(score.textContent) + 1
-    playAgainMsg.textContent = "You Win"
+    playerWon()
   } else if (myChoice === "scissors" && houseChoice === "rock") {
-    score.textContent = parseInt(score.textContent) - 1
-    playAgainMsg.textContent = "You Lose"
+    houseWon()
   } else {
     playAgainMsg.textContent = "Tie!"
   }
@@ -117,6 +123,7 @@ devModalBtn.addEventListener('click', () => {
   devModal.style.display = "flex"
 })
 
+// add event to both close-modal divs
 closeModals.forEach(closeModal => {
   closeModal.addEventListener('click', () => {
     modalBG.style.display = "none"

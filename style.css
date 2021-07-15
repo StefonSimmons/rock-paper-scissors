@@ -101,10 +101,16 @@ header{
   margin-top: 0
 }
 
+.chosen > .inner-choice{
+  width: 163px;
+  height: 163px;
+}
+.choice > .inner-choice{
+  width: 125px;
+  height: 125px;
+}
 .inner-choice{
   background: white;
-  width: 75%;
-  height: 75%;
   border-radius: 90%;
   display: flex;
   justify-content: center;
@@ -202,6 +208,38 @@ header{
   color: white;
 }
 
+
+/* WINNING and LOSING ANIMATIONS */
+.winner{
+  animation: celebration 3s ease-in 3
+}
+.winner > .inner-choice{
+  animation: celebration 3s ease-in 3
+}
+.not-winner{
+  animation: its-ok 3s ease-in 3
+}
+.not-winner > .inner-choice{
+  animation: its-ok 3s ease-in 3
+}
+
+@keyframes celebration{
+  0%{box-shadow: 0 0 1px 1px rgba(255, 255, 255, .6);}
+  20%{box-shadow: 0 0 15px 15px rgba(240, 14, 14, 0.9);}
+  40%{box-shadow: 0 0 15px 15px rgba(228, 137, 18, 0.9);transform: rotate(0deg);}
+  50%{box-shadow: 0 0 15px 15px rgba(191, 204, 7, 0.9);}
+  60%{box-shadow: 0 0 15px 15px rgba(13, 221, 23, 0.9);transform: rotate(360deg);}
+  80%{box-shadow: 0 0 15px 15px rgba(25, 45, 219, 0.9);}
+  100%{box-shadow: 0 0 1px 1px rgba(139, 17, 196, 0.6);}
+}
+
+@keyframes its-ok{
+  0%{box-shadow: 0 0 15px 15px rgba(102, 94, 94, 0.6);}
+  50%{box-shadow: 0 0 10px 10px rgba(124, 114, 114, 0.6);}
+  100%{box-shadow: 0 0 0 0 rgba(66, 50, 50, 0.6);}
+}
+
+
 /* LOADING ANIMATION */
 .inner-choice-loading{
   background: rgba(0,0,0,.3);
@@ -224,6 +262,7 @@ header{
   50%{transform: scale(1.1);}
   100%{transform: scale(1);}
 }
+
 
 /* MODAL */
 
@@ -320,6 +359,10 @@ header{
     width: 145px;
     height: 145px
   }
+  .choice > .inner-choice{
+    width: 110px;
+    height: 110px;
+  }
   .paper-choice-color{
     margin-right: 30px
   }
@@ -353,12 +396,16 @@ header{
     margin-left: 30px;
   }
   .chosen-title{
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
   }
   .chosen{
-    width: 125px;
-    height: 125px
+    width: 145px;
+    height: 145px
+  }
+  .chosen > .inner-choice{
+    width: 110px;
+    height: 110px;
   }
   .play-again-btn{
     width: 215px;
@@ -370,7 +417,8 @@ header{
   .play-again-msg{
     font-size: 36px;
     letter-spacing: 9px;
-    margin: 0 0 15px 0
+    margin: 0 0 15px 0;
+    text-align: center;
   }
   /* RULE MODAL MEDIA QUERY */
   .rule-modal{
