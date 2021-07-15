@@ -8,10 +8,9 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
 
 Users should be able to:
 
-- View the optimal layout for the game depending on their device's screen size
+- View the optimal layout for the game depending on their device's screen size 
+  - mobile: 360px
 - Play Rock, Paper, Scissors against the computer
-- Maintain the state of the score after refreshing the browser _(optional)_
-- **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)
 
 ### Links
 
@@ -19,13 +18,17 @@ Users should be able to:
 
 ## My process
 
+I like styling as I build out the html layout. Once the page looked like it should, I added the javascript and animations.
+
+### Blockers
+
+I perceived that the shadows in each choice button were gradients. Later, with the help of another developer, I found out that they were box shadows using the inset value. 
+
 ### Built with
 
 - Semantic HTML5 markup
 - CSS
 - Flexbox
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ## Author
 
