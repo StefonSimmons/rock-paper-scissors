@@ -53,13 +53,13 @@ const appendChoices = (choice) => {
   return [myChoice, houseChoice]
 }
 
-// pick helper
+// SCORE PICK HELPER
 const playerWon = () => {
   score.textContent = parseInt(score.textContent) + 1
   playAgainMsg.textContent = "You Win"
   myChosenContent.children[1].classList.add('winner')
 }
-// pick helper
+// SCORE PICK HELPER
 const houseWon = () => {
   score.textContent = parseInt(score.textContent) - 1
   playAgainMsg.textContent = "You Lose"
