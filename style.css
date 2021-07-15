@@ -57,7 +57,7 @@ header{
   font-size: 36px
 }
 
-/* CHOICES */
+/* CHOICES SECTION */
 
 .choices-section{
   display: flex;
@@ -202,7 +202,7 @@ header{
   color: white;
 }
 
-/* ANIMATION LOADING */
+/* LOADING ANIMATION */
 .inner-choice-loading{
   background: rgba(0,0,0,.3);
   width: 75%;
@@ -380,5 +380,11 @@ header{
   }
   .rule-modal > img{
     margin: auto 0; 
+  }
+  /* DEVELOPER MODAL MEDIA QUERY */
+  .developer-modal{
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
   }
 }
