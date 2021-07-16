@@ -30,6 +30,27 @@ I perceived that the shadows in each choice button were gradients. Later, with t
 - CSS
 - Flexbox
 
+### Code I'm Proud of
+
+> This function appends the words 'rock', 'paper', 'scissors' to the loading circles after the player makes their choice. 
+> It simulates the game play where the players speak the name of the game ("Rock! Paper! Scissors!")
+> I used the setInterval method which evaluates the callback function for setting the text every second (1000ms).
+
+```js
+function loadShot() {
+  let time = 0
+  const readyArr = ['paper', 'scissors']
+  const count = setInterval(() => {
+    const innerChoiceLoading = document.querySelectorAll('.inner-choice-loading')
+    innerChoiceLoading.forEach((loader) => loader.textContent = readyArr[time])
+    time += 1
+    if (time === 3) {
+      clearInterval(count)
+    }
+  }, 1000);
+}
+```
+
 ## Author
 
 - Website - [Stefon Simmons](https://www.stefonsimmons.me)
