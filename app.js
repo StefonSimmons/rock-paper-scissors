@@ -14,14 +14,14 @@ const ruleModal = document.querySelector(".rule-modal")
 const devModal = document.querySelector(".developer-modal")
 const closeModals = document.querySelectorAll(".close-modal")
 
-
 // HELPER TEMPLATE FOR CHOICE BUTTONS
 const selectionTemplate = (choice) => {
+  loadShot()
   const selection = `
   <button class="${choice}-choice-color chosen" value=${choice}>
     <div class="inner-choice${choice === "loading" ? "-loading" : ''}">
       ${choice === "loading"
-      ? ''
+      ? 'rock'
       :
       `
         <img
@@ -36,18 +36,32 @@ const selectionTemplate = (choice) => {
   return selection
 }
 
+// setInterval AND LOADING 'ROCK', 'PAPER', 'SCISSORS
+function loadShot() {
+  let time = 0
+  const readyArr = ['paper', 'scissors']
+  const count = setInterval(() => {
+    const innerChoiceLoading = document.querySelectorAll('.inner-choice-loading')
+    innerChoiceLoading.forEach((loader) => loader.textContent = readyArr[time])
+    time += 1
+    if (time === 3) {
+      clearInterval(count)
+    }
+  }, 1000);
+}
 
 // ADD PICKS TO DOM
 const appendChoices = (choice) => {
   const myChoice = choice.value
   const houseChoice = choices[Math.floor(Math.random() * choices.length)].value
 
-  myChosenContent.insertAdjacentHTML('beforeend', selectionTemplate(myChoice));
+  myChosenContent.insertAdjacentHTML('beforeend', selectionTemplate('loading'));
   houseChosenContent.insertAdjacentHTML('beforeend', selectionTemplate('loading'));
 
   setTimeout(() => { // pausing for dramatic effect
-    document.querySelector('.loading-choice-color').remove()
+    document.querySelectorAll('.loading-choice-color').forEach(c => c.remove())
     houseChosenContent.insertAdjacentHTML('beforeend', selectionTemplate(houseChoice));
+    myChosenContent.insertAdjacentHTML('beforeend', selectionTemplate(myChoice));
   }, 3000)
 
   return [myChoice, houseChoice]
