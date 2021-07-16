@@ -4,6 +4,8 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
 
 ## Overview
 
+<img src="./images/rock-paper-scissors.gif" width="400px" alt="rock paper scissors gif"/>
+
 ### The challenge
 
 Users should be able to:
