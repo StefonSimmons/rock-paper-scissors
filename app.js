@@ -38,14 +38,14 @@ const selectionTemplate = (choice) => {
 
 // setInterval AND LOADING 'ROCK', 'PAPER', 'SCISSORS
 function loadShot() {
-  let time = 0
+  let count = 0
   const readyArr = ['paper', 'scissors']
-  const count = setInterval(() => {
+  const setText = setInterval(() => {
     const innerChoiceLoading = document.querySelectorAll('.inner-choice-loading')
-    innerChoiceLoading.forEach((loader) => loader.textContent = readyArr[time])
-    time += 1
-    if (time === 3) {
-      clearInterval(count)
+    innerChoiceLoading.forEach((loader) => loader.textContent = readyArr[count])
+    count += 1
+    if (count === 3) {
+      clearInterval(setText)
     }
   }, 1000);
 }
